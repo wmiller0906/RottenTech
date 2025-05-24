@@ -1,0 +1,99 @@
+----------------------------------------------------------------------
+Items serve a core function in this game. They are used for:
+- Combat against NPCS
+- Trading with NPCS
+- Consuming for benefits
+- Navigating the world through unlocking areas
+- Crafting to build other items
+The following content below is a breakdown of how items work.
+----------------------------------------------------------------------
+
+UNIVERSAL ITEM TRAITS
+- ID (int)
+    Items all have an unique ID consisting of 5 digits
+    The first digit signifies the item type
+    The second digit signifies a further break down
+    Digits 3-5 are unique to the item
+    If no further break down, then the second digit is 0
+    The following is a list of item classifer IDs:
+        1xxxx: Weapons
+            11xxx: Guns
+            12xxx: Melee
+            13xxx: Throwables
+        2xxxx: Attire
+            21xxx: Armor
+            22xxx: Clothing
+        3xxxx: Consumables
+            31xxx: Food
+            32xxx: Medical Aid
+            33xxx: Drugs
+            34xxx: Traps
+        4xxxx: Equipment
+        5xxxx: Ammo
+        6xxxx: Junk
+        7xxxx: Quest Items
+        8xxxx-9xxxx: TBD
+- WEIGHT (double)
+    Items have a weight. The inventory system allows the player to carry up to this limit.
+    Only the player is affected by the weight limit as NPCs will only interact with the items they spawn with.
+- VALUE (int)
+    Items have a base value for their worth when trading.
+    This base value serves as a reference to the real value adjusted based on circumstances.
+        Perks affecting trade => May +% increase value for selling or -% decrease for buying
+        Merchants will buy goods from player for less than true value due to "needing a profit"
+- NAME (string)
+    Pretty self-explanatory
+    
+----------------------------------------------------------------------
+Further explanation below is regarding specifics of each item subclass
+----------------------------------------------------------------------
+
+----------
+   GUNS
+----------
+INIT ORDER:
+    id, weight, value, name, accuracy, damage, fire rate, magazine capacity, reload time
+    
+Unique traits are the following:
+_____________________________________________________________________________________________
+- accuracy (double)
+    A modifier representing the chance to hit the target, before applying character-based adjustments
+---------------------------------------------------------------------------------------------
+    getAccuracy()
+_____________________________________________________________________________________________
+- damage (double)
+    Amount of HP removed when character us struck by a bullet
+---------------------------------------------------------------------------------------------
+    getDamage()
+    getDPS() => Returns damage per second by dividing damage by fireRate
+_____________________________________________________________________________________________
+- fireRate (double)
+    How many seconds to fire a single bullet
+---------------------------------------------------------------------------------------------
+    getFireRate()
+_____________________________________________________________________________________________
+- capacity (int)
+    How many bullets are loaded in the gun at a time
+    When this reaches 0, gun must be reloaded
+---------------------------------------------------------------------------------------------
+    getCapacity()
+_____________________________________________________________________________________________
+- reloadTime (double)
+    Amount of time to reload the gun
+---------------------------------------------------------------------------------------------
+    getReloadTime()
+_____________________________________________________________________________________________
+- currentMag (int)
+    Amount of bullets out of capacity that are currently available for use before reload
+---------------------------------------------------------------------------------------------
+    getCurrentMag()
+    setCurrentMag(int x) => Used during reload
+_____________________________________________________________________________________________
+- ammo (int)
+    How many bullets are currently in the characters inventory available for reload
+---------------------------------------------------------------------------------------------
+    getAmmo()
+    getAmmoRef() => Returns a reference to the ammo value
+_____________________________________________________________________________________________
+Unique Functions:
+-
