@@ -1,6 +1,6 @@
 # RottenTech
 
-**RottenTech** is a personal C++ game development project designed to simulate a survival in an apocalyptic environment. It includes core mechanics for managing items, weapons, and character interactions in a structured, object-oriented way.
+**RottenTech** is a personal C++ game development project designed to simulate a survival in a cyberpunk apocalyptic environment. It includes core mechanics for managing items, weapons, and character interactions in a structured, object-oriented way.
 This is still in the early phases of development so it will continue to be fleshed out.
 
 ---
