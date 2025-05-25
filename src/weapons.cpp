@@ -15,36 +15,47 @@ Gun::Gun(const GunData& data)
           ammo(0) {}
 
 // Accessors
-double Gun::getAccuracy() { return accuracy; }
-double Gun::getDPS() { return damage / fireRate; }
-double Gun::getDamage() { return damage; }
-double Gun::getFireRate() { return fireRate; }
-int    Gun::getCapacity() { return capacity; }
-double Gun::getReloadTime() { return reloadTime; }
-int    Gun::getCurrentMag() const { return currentMag; }
-void   Gun::setCurrentMag(int x) { currentMag = x; }
-int    Gun::getAmmo() const { return ammo; }
-int&   Gun::getAmmoRef() { return ammo; }
+double Gun::get_accuracy() const { return accuracy; }
+double Gun::get_dps() const { return damage / fireRate; }
+double Gun::get_damage() const { return damage; }
+double Gun::get_fire_rate() const { return fireRate; }
+int    Gun::get_capacity() const { return capacity; }
+double Gun::get_reload_time() const { return reloadTime; }
+int    Gun::get_current_mag() const { return currentMag; }
+int    Gun::get_ammo() const { return ammo; }
+int&   Gun::get_ammo_ref() { return ammo; }
 
 // Mutators
-double Gun::reload() {
-    int currAmmo = getAmmo();
+void   Gun::set_current_mag(int x) { currentMag = x; }
+
+void Gun::reload() {
+    int currAmmo = get_ammo();
     // If have 1+ mag's worth of ammo
-    if (currAmmo >= getCapacity()) {
-        int usedAmmo = getCapacity() - getCurrentMag(); // Find ammo used
-        setCurrentMag(getCapacity());   // Reload full clip
-        getAmmoRef() -= usedAmmo;  // Remove usedAmmo from ammo
+    if (currAmmo >= get_capacity()) {
+        int usedAmmo = get_capacity() - get_current_mag(); // Find ammo used
+        set_current_mag(get_capacity());   // Reload full clip
+        get_ammo_ref() -= usedAmmo;  // Remove usedAmmo from ammo
     }
     else {
-        setCurrentMag(currAmmo);    // Reload available ammo
-        getAmmoRef() = 0;   // Empty ammo
+        set_current_mag(currAmmo);    // Reload available ammo
+        get_ammo_ref() = 0;   // Empty ammo
     }
     
-    return getReloadTime(); // Return time to reload
 }
 
 
 /////////////////////////////////////////////////////////
 //* Melee f(x)'s' *//
 
-double Melee::getDPS() { return damage / fireRate; }
+// Constructor
+Melee::Melee(const meleeData& data)
+        : Item(data.id, data.weight, data.value, data.name),
+          accuracy(data.accuracy),
+          damage(data.damage),
+          fireRate(data.fireRate) {}
+
+// Accessors
+double Melee::get_accuracy() const { return accuracy; }
+double Melee::get_dps() const { return damage / fireRate; }
+double Melee::get_damage() const { return damage; }
+double Melee::get_fire_rate() const { return fireRate; }

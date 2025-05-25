@@ -30,17 +30,17 @@ struct GunData {
 class Gun : public Item {
     public:
         Gun(const GunData& data);
-        double getAccuracy();
-        double getDPS();
-        double getDamage();
-        double getFireRate();
-        int getCapacity();
-        double getReloadTime();
-        int getCurrentMag() const;
-        void setCurrentMag(int x);
-        int getAmmo() const;
-        int& getAmmoRef();
-        double reload();
+        double get_accuracy() const;
+        double get_dps() const;
+        double get_damage() const;
+        double get_fire_rate() const;
+        int get_capacity() const;
+        double get_reload_time() const;
+        int get_current_mag() const;
+        void set_current_mag(int x);
+        int get_ammo() const;
+        int& get_ammo_ref();
+        void reload();
     protected:
         const double accuracy;  // Modifier to hit target
         const double damage;
@@ -51,25 +51,6 @@ class Gun : public Item {
         int ammo;
 };
 
-class Melee : public Item {
-    public:
-        Melee(int id, double wt, int val, const std::string &nm, double dmg, double rate)
-        : Item(id, wt, val, nm), damage(dmg), fireRate(rate) {}
-        double getDPS();
-    private:
-        const double damage;
-        const double fireRate;
-};
-
-
-
-
-class TenMMPistol : public Gun {
-    public:
-        TenMMPistol() : Gun(100, 4.0, 20, "pistol", 0.90, 15, 0.333, 8, 1.5) { currentMag = capacity; }
-};
-
-
 
 
 
@@ -77,12 +58,30 @@ class TenMMPistol : public Gun {
 [12xxx] MELEE
 ------------*/
 
-/////////////////////////////////////////////////////////
-//* Machete *//
-
-class Machete : public Melee {
-    public:
-        Machete() : Melee(300, 2.0, 10, "machete", 10, 2.00) {}
+// meleeData : A configuration for defining types of melee weapons
+struct meleeData {
+    int id;
+    double weight;  // CHECK THESE VAR
+    int value;
+    std::string name;
+    double accuracy;
+    double damage;
+    double fireRate;
 };
+
+
+class Melee : public Item {
+    public:
+        Melee(const meleeData& data);
+        double get_accuracy() const;
+        double get_dps() const;
+        double get_damage() const;
+        double get_fire_rate() const;
+    private:
+        const double accuracy;
+        const double damage;
+        const double fireRate;
+};
+
 
 #endif
