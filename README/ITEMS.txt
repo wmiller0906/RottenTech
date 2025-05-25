@@ -52,7 +52,7 @@ Further explanation below is regarding specifics of each item subclass
    GUNS
 ----------
 INIT ORDER:
-    id, weight, value, name, accuracy, damage, fire rate, magazine capacity, reload time
+    id, weight, value, name, accuracy, damage, fireRate, capacity, reloadTime
     
 Unique traits are the following:
 _____________________________________________________________________________________________
