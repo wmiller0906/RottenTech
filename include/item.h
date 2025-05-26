@@ -8,18 +8,14 @@
 
 #include <string>
 
-
-/////////////////////////////////////////////////////////
-//* BASE CLASSES *//
-
 class Item {
     public:
         Item(int id, double wt, int val, const std::string &nm)
         : ID(id), weight(wt), value(val), name(nm) {}
-        int getID() const;
-        double getWeight() const;
-        int getValue() const;
-        std::string getName() const;
+        int get_id() const;
+        double get_weight() const;
+        int get_value() const;
+        std::string get_name() const;
         
         
     protected:
@@ -28,75 +24,5 @@ class Item {
         const int value;
         const std::string name;
 };
-
-
-
-
-
-
-/////////////////////////////////////////////////////////
-//* [6xxxx] JUNK *//
-
-class Scrap : public Item {
-    public:
-        Scrap() : Item(50000, 1.0, 5, "scrap") {}
-};
-
-
-
-
-
-
-
-
-/////////////////////////////////////////////////////////
-//* [5xxxx] AMMO *//
-
-class TenMM : public Item {
-    public:
-        TenMM() : Item(200, 0.04, 2, "10mm") {}
-};
-
-
-
-
-
-
-
-/////////////////////////////////////////////////////////
-//* [21xxx] ARMOR *//
-
-class LeatherChest : public Item {
-    public:
-};
-
-/////////////////////////////////////////////////////////
-//* [22xxx] Clothing *//
-
-
-/////////////////////////////////////////////////////////
-//* AID *//
-
-class MedKit : public Item {
-    
-};
-
-
-/////////////////////////////////////////////////////////
-//* EQUIPMENT *//
-
-class Rope : public Item {
-    
-};
-
-
-/////////////////////////////////////////////////////////
-//* QUEST *//
-
-class Vault13Pass : public Item {
-    
-};
-
-
 
 #endif

@@ -1,15 +1,9 @@
 #include "item.h"
-#include <iostream>
-#include <string>
-#include <utility>
 
-/////////////////////////////////////////////////////////
-//* ITEM f(x)'s' *//
+int Item::get_id() const { return ID; }
 
-int Item::getID() const { return ID; }
+double Item::get_weight() const { return weight; }
 
-double Item::getWeight() const { return weight; }
+int Item::get_value() const { return value; }
 
-int Item::getValue() const { return value; }
-
-std::string Item::getName() const { return name; }
+std::string Item::get_name() const { return name; }
