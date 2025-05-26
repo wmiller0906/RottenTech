@@ -1,0 +1,9 @@
+#ifndef AMMO_H
+#define AMMO_H
+
+#include "item.h"
+
+/////////////////////////////////////////////////////////
+//* [5xxxx] AMMO 
+
+#endif

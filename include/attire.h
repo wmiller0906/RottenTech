@@ -1,0 +1,17 @@
+#ifndef ATTIRE_H
+#define ATTIRE_H
+
+#include "item.h"
+
+
+/////////////////////////////////////////////////////////
+//* [21xxx] ARMOR *//
+
+class LeatherChest : public Item {
+    public:
+};
+
+/////////////////////////////////////////////////////////
+//* [22xxx] Clothing *//
+
+#endif
