@@ -16,7 +16,7 @@ struct GunData {
 
 
 // meleeData : A configuration for defining types of melee weapons
-struct meleeData {
+struct MeleeData {
     int id;
     double weight;
     int value;
@@ -28,7 +28,7 @@ struct meleeData {
 
 
 // throwData : A configuration of defining types of throwable weapons
-struct throwData {
+struct ThrowData {
     int id;
     double weight;
     int value;
@@ -36,7 +36,7 @@ struct throwData {
     double accuracy;
     double damage;
     double fireRate;
-    double stack;
+    int capacity;
     double reloadTime;
 };
 
