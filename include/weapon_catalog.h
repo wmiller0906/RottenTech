@@ -30,7 +30,7 @@ namespace GunCatalog {
     static const GunData mx57 = { 11301, 12.0, 350, "MX57", 0.8, 15.0, 0.125, 30, 2.5 };
     
     // Single-fire rifle. damage+, fireRate-, capacity-
-    static const GunData relock ] { 11302, 13.5, 400, "Relock", 0.9, 20.0, 0.333, 15, 2.5 };
+    static const GunData relock = { 11302, 13.5, 400, "Relock", 0.9, 20.0, 0.333, 15, 2.5 };
     
     /*--------------
     [114xx] Shotguns
@@ -44,8 +44,11 @@ namespace GunCatalog {
 [12xxx] MELEE
 -----------*/
 namespace MeleeCatalog {
-    static const MeleeData machete = { /* values */ };
-    static const MeleeData combatKnife = { /* values */ };
+    // damage+, fireRate-
+    static const MeleeData machete = { 12001, 7.0, 80, "Machete", 0.95, 40.0, 1.0 };
+    
+    // damage-, fireRate+
+    static const MeleeData combatKnife = { 12002, 1.0, 80, "Combat Knife", 0.95, 20.0, 0.5 };
 }
 
 
@@ -53,5 +56,14 @@ namespace MeleeCatalog {
 [13xxx] THROWABLE
 ---------------*/
 namespace ThrowCatalog {
-    static const ThrowableData fragGrenade = { /* values */ };
+    /*----------------
+    [131xx] Explosives
+    ----------------*/
+    // Slow to use, but deadly damage
+    static const ThrowData fragGrenade = { 13101, 1.0, 100, "Fragmentation Grenade", 0.75, 100.0, 2.0, 1, 3.0 };
+    
+    /*------------
+    [132xx] Knives
+    ------------*/
+    static const ThrowData throwingKnife = { 13201, 0.25, 60, "Throwing Knife", 0.75, 33.333, 0.5, 3, 2.0 };
 }
