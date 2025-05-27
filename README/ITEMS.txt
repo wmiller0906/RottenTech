@@ -44,56 +44,13 @@ UNIVERSAL ITEM TRAITS
 - NAME (string)
     Pretty self-explanatory
     
+FUNCTIONS
+get_id() => return ID
+get_weight() => return weight
+get_value() => return value
+get_name() => return name
+    
 ----------------------------------------------------------------------
 Further explanation below is regarding specifics of each item subclass
 ----------------------------------------------------------------------
 
-----------
-   GUNS
-----------
-INIT ORDER:
-    id, weight, value, name, accuracy, damage, fireRate, capacity, reloadTime
-    
-Unique traits are the following:
-_____________________________________________________________________________________________
-- accuracy (double)
-    A modifier representing the chance to hit the target, before applying character-based adjustments
----------------------------------------------------------------------------------------------
-    getAccuracy()
-_____________________________________________________________________________________________
-- damage (double)
-    Amount of HP removed when character us struck by a bullet
----------------------------------------------------------------------------------------------
-    getDamage()
-    getDPS() => Returns damage per second by dividing damage by fireRate
-_____________________________________________________________________________________________
-- fireRate (double)
-    How many seconds to fire a single bullet
----------------------------------------------------------------------------------------------
-    getFireRate()
-_____________________________________________________________________________________________
-- capacity (int)
-    How many bullets are loaded in the gun at a time
-    When this reaches 0, gun must be reloaded
----------------------------------------------------------------------------------------------
-    getCapacity()
-_____________________________________________________________________________________________
-- reloadTime (double)
-    Amount of time to reload the gun
----------------------------------------------------------------------------------------------
-    getReloadTime()
-_____________________________________________________________________________________________
-- currentMag (int)
-    Amount of bullets out of capacity that are currently available for use before reload
----------------------------------------------------------------------------------------------
-    getCurrentMag()
-    setCurrentMag(int x) => Used during reload
-_____________________________________________________________________________________________
-- ammo (int)
-    How many bullets are currently in the characters inventory available for reload
----------------------------------------------------------------------------------------------
-    getAmmo()
-    getAmmoRef() => Returns a reference to the ammo value
-_____________________________________________________________________________________________
-Unique Functions:
--

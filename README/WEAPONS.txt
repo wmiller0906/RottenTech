@@ -1,0 +1,98 @@
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Weapons are used to engage in combat and trade.
+There are three types: Guns, Melee, and Throwables.
+Below is the implementation of each class.
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+/*----------*\
+||   GUNS   ||
+\*----------*/
+INIT ORDER:
+    id, weight, value, name, accuracy, damage, fireRate, capacity, reloadTime
+    
+Unique traits are the following:
+_____________________________________________________________________________________________
+- accuracy (double)
+    A modifier representing the chance to hit the target, before applying character-based adjustments
+---------------------------------------------------------------------------------------------
+    getAccuracy()
+_____________________________________________________________________________________________
+- damage (double)
+    Amount of HP removed when character us struck by a bullet
+---------------------------------------------------------------------------------------------
+    getDamage()
+    getDPS() => Returns damage per second by dividing damage by fireRate
+_____________________________________________________________________________________________
+- fireRate (double)
+    How many seconds to fire a single bullet
+---------------------------------------------------------------------------------------------
+    getFireRate()
+_____________________________________________________________________________________________
+- capacity (int)
+    How many bullets are loaded in the gun at a time
+    When this reaches 0, gun must be reloaded
+---------------------------------------------------------------------------------------------
+    getCapacity()
+_____________________________________________________________________________________________
+- reloadTime (double)
+    Amount of time to reload the gun
+---------------------------------------------------------------------------------------------
+    getReloadTime()
+_____________________________________________________________________________________________
+- currentMag (int)
+    Amount of bullets out of capacity that are currently available for use before reload
+---------------------------------------------------------------------------------------------
+    getCurrentMag()
+    setCurrentMag(int x) => Used during reload
+_____________________________________________________________________________________________
+- ammo (int)
+    How many bullets are currently in the characters inventory available for reload
+---------------------------------------------------------------------------------------------
+    getAmmo()
+    getAmmoRef() => Returns a reference to the ammo value
+_____________________________________________________________________________________________
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Weapon_Data is the standard for defining the different weapon types in this game.
+It is a struct that defines all the values for a weapon upon declaration.
+They are defined within their respective namespace.
+weapon_data has three different structs:
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1. GunData (namespace GunCatalog::)
+    int id
+    double weight
+    int value
+    string name
+    double accuracy
+    double damage
+    double fireRate
+    int capacity
+    double reloadTime
+2. MeleeData (namespace MeleeCatalog::)
+    int id
+    double weight
+    int value
+    string name
+    double accuracy
+    double damage
+    double fireRate
+3. ThrowData (namespace ThrowCatalog::)
+    int id
+    double weight
+    int value
+    string name
+    double accuracy
+    double damage
+    double fireRate
+    int capacity
+    double reloadTime
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+CREATING A WEAPON OBJECT
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Best to use pointers to avoid stack overflow from weapon creation.
+File must have:
+#include "weapons.h"
+#include "weapon_catalog.h"
+
+Gun

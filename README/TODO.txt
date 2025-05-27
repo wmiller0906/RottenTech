@@ -1,3 +1,4 @@
 WEAPONS
 1. Incorporate damage types (Electric, fire, toxic)
-2. Incorporate fall-off accuracy and damage
+2. Incorporate fall-off accuracy and damage (range effect)
+3. primary_stats.h/.cpp => Cap on stat levels
