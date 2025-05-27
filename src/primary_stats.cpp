@@ -27,6 +27,21 @@ int& PrimaryStats::operator[] (const int& stat) {
     }
 }
 
+// For const printing
+int PrimaryStats::operator[](const int& stat) const {
+    switch (stat) {
+        case 0: return strength;
+        case 1: return perception;
+        case 2: return endurance;
+        case 3: return charisma;
+        case 4: return intelligence;
+        case 5: return agility;
+        case 6: return luck;
+        default: throw std::out_of_range("Invalid PrimaryStats index");
+    }
+}
+
+
 void PrimaryStats::print_stats() const {
     std::cout << "+----------------+--------+" << std::endl;
     std::cout << "| Strength       | " << std::setw(6) << strength << " |" << std::endl;

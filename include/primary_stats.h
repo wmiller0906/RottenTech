@@ -6,9 +6,15 @@
 #include <vector>
 
 struct PrimaryStats {
-    vector<std::string> primaryStatNames = {"Strength", "Perception", "Endurance",
-                                            "Charisma", "Intelligence", "Agility",
-                                            "Luck" };
+    std::vector<std::string> primaryStatNames = {
+        "Strength",
+        "Perception",
+        "Endurance",
+        "Charisma",
+        "Intelligence",
+        "Agility",
+        "Luck"};
+        
     int strength = 3;
     int perception = 3;
     int endurance = 3;
@@ -19,6 +25,7 @@ struct PrimaryStats {
 
     int& operator[] (const std::string& stat);          // For indexed access using name
     int& operator[] (const int& stat);                  //  using number
+    int operator[] (const int& stat) const;
     void print_stats() const;
 };
 
