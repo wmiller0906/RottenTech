@@ -2,3 +2,5 @@ WEAPONS
 1. Incorporate damage types (Electric, fire, toxic)
 2. Incorporate fall-off accuracy and damage (range effect)
 3. primary_stats.h/.cpp => Cap on stat levels
+4. Add SecondaryStats
+5. (player.cpp) : Implement level up process.
