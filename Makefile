@@ -9,7 +9,7 @@ ENTRY = debug
 ENTRY_SRC = $(ENTRY).cpp
 
 TARGET_DIR = bin
-TARGET = $(TARGET_DIR)/RottenTech
+TARGET = $(TARGET_DIR)/TechRot
 
 all: $(TARGET)
 
