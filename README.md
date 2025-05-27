@@ -1,6 +1,6 @@
 # TechRot
 
-**RottenTech** is a personal C++ game development project designed to simulate survival in a cyberpunk environment. It includes core mechanics for managing items, weapons, and character interactions in a structured, object-oriented way.
+**TechRot** is a personal C++ game development project designed to simulate survival in a cyberpunk environment. It includes core mechanics for managing items, weapons, and character interactions in a structured, object-oriented way.
 This is still in the early phases of development so it will continue to be fleshed out.
 
 ---
@@ -35,7 +35,7 @@ This is still in the early phases of development so it will continue to be flesh
 ## Project Structure
 
 <pre>
-RottenTech/
+TechRot/
 ├── include/        # Header files
 ├── src/            # Source files
 ├── bin/            # Compiled executables
