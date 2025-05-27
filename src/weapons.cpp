@@ -48,7 +48,7 @@ void Gun::reload() {
 //* Melee f(x)'s' *//
 
 // Constructor
-Melee::Melee(const meleeData& data)
+Melee::Melee(const MeleeData& data)
         : Item(data.id, data.weight, data.value, data.name),
           accuracy(data.accuracy),
           damage(data.damage),

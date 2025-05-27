@@ -49,7 +49,7 @@ class Gun : public Item {
 
 class Melee : public Item {
     public:
-        Melee(const meleeData& data);
+        Melee(const MeleeData& data);
         double get_accuracy() const;
         double get_dps() const;
         double get_damage() const;
